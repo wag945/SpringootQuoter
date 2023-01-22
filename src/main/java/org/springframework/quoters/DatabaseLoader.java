@@ -24,7 +24,7 @@ import org.springframework.context.annotation.Configuration;
 class DatabaseLoader {
 
 	@Bean
-	CommandLineRunner init(QuoteRepository repository) {
+	CommandLineRunner init(QuoteRepository repository, TrackRepository tr) {
 
 		return args -> {
 			repository.save(new Quote("Working with Spring Boot is like pair-programming with the Spring developers."));
@@ -48,6 +48,7 @@ class DatabaseLoader {
 			repository.save(new Quote("I have two hours today to build an app from scratch. @springboot to the rescue!"));
 			repository.save(new Quote("@springboot with @springframework is pure productivity! Who said in #java one has "
 					+ "to write double the code than in other langs? #newFavLib"));
+			tr.save(new Track("37.0","-74.0","Friend","0.0","0.0"));
 		};
 	}
 }
