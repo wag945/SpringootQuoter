@@ -49,6 +49,7 @@ class DatabaseLoader {
 			repository.save(new Quote("@springboot with @springframework is pure productivity! Who said in #java one has "
 					+ "to write double the code than in other langs? #newFavLib"));
 			tr.save(new Track("37.0","-74.0","Friend","0.0","0.0"));
+			tr.save(new Track("37.5","-74.0","Unknown","180.0","300.0"));
 		};
 	}
 }

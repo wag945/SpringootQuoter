@@ -24,7 +24,7 @@ public class TrackController {
 	public List<TrackResource> getAll() {
 
 		return repository.findAll().stream()
-			.map(track -> new TrackResource(track, ""))
+			.map(track -> new TrackResource(track, "Track"))
 			.collect(Collectors.toList());
 	}
 
@@ -32,7 +32,7 @@ public class TrackController {
 	public TrackResource getOne(@PathVariable Long id) {
 
 		return repository.findById(id)
-			.map(track -> new TrackResource(track, ""))
+			.map(track -> new TrackResource(track, "Track"))
 			.orElse(new TrackResource(NONE, "Track " + id + " does not exist"));
 	}
 
